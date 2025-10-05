@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Satro Minds - Página Oficial</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: #1b2a49;
+    }
+
+    /* Fondo con imagen */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("carina_nebula.png") center center / cover no-repeat;
+      filter: blur(6px) brightness(0.75);
+      transform: scale(1.02);
+      z-index: -1;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1b3c73, #285a8e);
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+      animation: zoomInDown 3s ease;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      animation: zoomIn 3s ease forwards;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    section {
+      padding: 3rem 10%;
+      overflow: hidden;
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 1100px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #12355b;
+      border-left: 6px solid #285a8e;
+      padding-left: 10px;
+      margin-bottom: 1rem;
+      animation: slideInLeft 3s ease;
+    }
+
+    .logo {
+      max-width: 250px;
+      display: block;
+      margin: 1rem auto;
+      transition: transform 0.5s;
+      animation: zoomIn 3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .text {
+      flex: 1;
+      min-width: 280px;
+      animation: slideInLeft 3s ease;
+    }
+
+    .image {
+      flex: 1;
+      text-align: center;
+      animation: slideInRight 3s ease;
+    }
+
+    .image img {
+      max-width: 90%;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.5s ease;
+      animation: zoomIn 3s ease;
+    }
+
+    .image img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #1b3c73;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      animation: slideUp 3s ease;
+    }
+
+    footer img {
+      max-width: 120px;
+      margin-top: 1rem;
+    }
+
+    /* Animaciones CSS */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes zoomInDown {
+      0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bienvenidos a la página oficial de <br>✨SATRO MINDS 🚀</h1>
+    <p>Nasa Space Challenge Neiva 2025</p>
+  </header>
+
+  <section>
+    <h2>Logo & Significado</h2>
+    <div class="content">
+      <div class="image">
+        <!-- Aquí va la foto que me diste -->
+        <img src="logo_satro_minds.jpg" alt="Logo Satro Minds" class="logo">
+      </div>
+      <div class="text">
+        <p>
+          Nuestro logo está compuesto de 2 elementos esenciales: el cohete 🚀 que simboliza nuestro enfoque en el espacio y el nombre que proviene de la palabra japonesa <b>“SATORI”</b>, que significa "iluminación" o "comprensión".
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Quiénes somos</h2>
+    <div class="content">
+      <div class="text">
+        <p>
+          El 5 de septiembre se conformó nuestro grupo. Primero nos llamamos “Stellar Minds”, pero descubrimos la palabra japonesa <b>“SATORI”</b> que significa "despertar" o "iluminación".
+        </p>
+        <p>
+          Elegimos el reto: <a href="https://www.spaceappschallenge.org/2025/challenges/your-home-in-space-the-habitat-layout-creator/" target="_blank">Tu hogar en el espacio</a> 🌌, creando un videojuego en <b>Roblox Studio</b> sobre los planetas del sistema solar.
+        </p>
+      </div>
+      <div class="image">
+        <img src="integrantes.jpg" alt="Integrantes del equipo">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Nuestro Proyecto y Su Visión</h2>
+    <div class="content">
+      <div class="image">
+        <img src="roblox.png" alt="Roblox Studio">
+      </div>
+      <div class="text"> 
+        <p>
+          Nuestro proyecto es un juego donde en cada planeta se deben completar misiones. 
+          Cada planeta otorga características únicas de sus estados físicos y químicos y cómo se pueden generar hábitats en ellos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Más sobre nosotros</h2>
+    <div class="content">
+      <div class="image">
+        <img src="manual_logo.jpg" alt="Logo hecho a mano">
+      </div>
+      <div class="text">
+        <p>
+          Somos un equipo de 6 estudiantes de grado 8 del colegio <b>Liceo Lunita de Chía</b>, en Cundinamarca. 
+          Nos emocionamos al enterarnos de la oportunidad de participar en el <b>NASA Space Apps Challenge</b> y desde el 5 de septiembre iniciamos esta aventura.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Satro Minds - NASA Space Apps Challenge Neiva</p>
+    <p>Escanea el QR para conocer más:</p>
+    <img src="qr.png" alt="QR del reto">
+  </footer>
+
+</body>
+</html>
