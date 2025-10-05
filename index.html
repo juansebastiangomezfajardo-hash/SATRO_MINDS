@@ -9,17 +9,31 @@
       margin: 0;
       font-family: "Poppins", sans-serif;
       color: #1b2a49;
+      overflow-x: hidden;
     }
 
-    /* Fondo con imagen */
+    /* Fondo animado con estrellas */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: url("carina_nebula.png") center center / cover no-repeat;
-      filter: blur(6px) brightness(0.75);
-      transform: scale(1.02);
+      background: radial-gradient(ellipse at bottom, #0d1b2a, #000);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("https://www.transparenttextures.com/patterns/stardust.png");
+      animation: twinkle 6s infinite alternate;
+      opacity: 0.5;
       z-index: -1;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.4; transform: scale(1); }
+      100% { opacity: 0.7; transform: scale(1.05); }
     }
 
     header {
@@ -27,13 +41,13 @@
       color: #fff;
       padding: 2rem;
       text-align: center;
-      animation: zoomInDown 3s ease;
+      animation: zoomInDown 2s ease, pulseHeader 4s infinite alternate;
     }
 
     header h1 {
       font-size: 2.8rem;
       margin: 0;
-      animation: zoomIn 3s ease forwards;
+      animation: glow 3s ease-in-out infinite alternate;
     }
 
     header p {
@@ -45,94 +59,45 @@
     section {
       padding: 3rem 10%;
       overflow: hidden;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
       border-radius: 12px;
       margin: 2rem auto;
-      max-width: 1100px;
+      max-width: 1000px;
+      backdrop-filter: blur(8px);
+      color: #fff;
+      animation: slideInUp 2s ease;
     }
 
     h2 {
       font-size: 2rem;
-      color: #12355b;
-      border-left: 6px solid #285a8e;
+      color: #77c6ff;
+      border-left: 6px solid #77c6ff;
       padding-left: 10px;
       margin-bottom: 1rem;
-      animation: slideInLeft 3s ease;
+      animation: slideInLeft 2s ease;
     }
 
-    .logo {
-      max-width: 250px;
-      display: block;
-      margin: 1rem auto;
-      transition: transform 0.5s;
-      animation: zoomIn 3s ease;
-    }
-
-    .logo:hover {
-      transform: scale(1.1) rotate(3deg);
-    }
-
-    .content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .text {
-      flex: 1;
-      min-width: 280px;
-      animation: slideInLeft 3s ease;
-    }
-
-    .image {
-      flex: 1;
-      text-align: center;
-      animation: slideInRight 3s ease;
-    }
-
-    .image img {
-      max-width: 90%;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.5s ease;
-      animation: zoomIn 3s ease;
-    }
-
-    .image img:hover {
-      transform: scale(1.05);
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      animation: fadeIn 2s ease;
     }
 
     footer {
       background: #1b3c73;
       color: #fff;
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem;
       margin-top: 2rem;
       animation: slideUp 3s ease;
+      font-size: 1rem;
     }
 
-    footer img {
-      max-width: 120px;
-      margin-top: 1rem;
-    }
-
-    /* Animaciones CSS */
+    /* 🌟 Animaciones */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
-    }
-
-    @keyframes zoomIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
     }
 
     @keyframes zoomInDown {
@@ -157,14 +122,14 @@
       }
     }
 
-    @keyframes slideInRight {
+    @keyframes slideInUp {
       from {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateY(40px);
       }
       to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
       }
     }
 
@@ -178,81 +143,66 @@
         transform: translateY(0);
       }
     }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #77c6ff, 0 0 10px #1b3c73, 0 0 20px #77c6ff;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #77c6ff, 0 0 40px #1b3c73;
+      }
+    }
+
+    @keyframes pulseHeader {
+      from { background-position: 0% 50%; }
+      to { background-position: 100% 50%; }
+    }
+
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Bienvenidos a la página oficial de <br>✨SATRO MINDS 🚀</h1>
+    <h1>✨ SATRO MINDS 🚀</h1>
     <p>Nasa Space Challenge Neiva 2025</p>
   </header>
 
   <section>
     <h2>Logo & Significado</h2>
-    <div class="content">
-      <div class="image">
-        <!-- Aquí va la foto que me diste -->
-        <img src="logo_satro_minds.jpg" alt="Logo Satro Minds" class="logo">
-      </div>
-      <div class="text">
-        <p>
-          Nuestro logo está compuesto de 2 elementos esenciales: el cohete 🚀 que simboliza nuestro enfoque en el espacio y el nombre que proviene de la palabra japonesa <b>“SATORI”</b>, que significa "iluminación" o "comprensión".
-        </p>
-      </div>
-    </div>
+    <p>
+      Nuestro logo está compuesto de dos elementos esenciales: el cohete 🚀, que simboliza nuestro enfoque en el espacio, y el nombre que proviene de la palabra japonesa <b>“SATORI”</b>, que significa "iluminación" o "comprensión".
+    </p>
   </section>
 
   <section>
     <h2>Quiénes somos</h2>
-    <div class="content">
-      <div class="text">
-        <p>
-          El 5 de septiembre se conformó nuestro grupo. Primero nos llamamos “Stellar Minds”, pero descubrimos la palabra japonesa <b>“SATORI”</b> que significa "despertar" o "iluminación".
-        </p>
-        <p>
-          Elegimos el reto: <a href="https://www.spaceappschallenge.org/2025/challenges/your-home-in-space-the-habitat-layout-creator/" target="_blank">Tu hogar en el espacio</a> 🌌, creando un videojuego en <b>Roblox Studio</b> sobre los planetas del sistema solar.
-        </p>
-      </div>
-      <div class="image">
-        <img src="integrantes.jpg" alt="Integrantes del equipo">
-      </div>
-    </div>
+    <p>
+      El 5 de septiembre se conformó nuestro grupo. Primero nos llamamos “Stellar Minds”, pero descubrimos la palabra japonesa <b>“SATORI”</b>, que significa "despertar" o "iluminación".
+    </p>
+    <p>
+      Elegimos el reto: <a href="https://www.spaceappschallenge.org/2025/challenges/your-home-in-space-the-habitat-layout-creator/" target="_blank" style="color:#77c6ff;">Tu hogar en el espacio 🌌</a>, creando un videojuego en <b>Roblox Studio</b> sobre los planetas del sistema solar.
+    </p>
   </section>
 
   <section>
     <h2>Nuestro Proyecto y Su Visión</h2>
-    <div class="content">
-      <div class="image">
-        <img src="roblox.png" alt="Roblox Studio">
-      </div>
-      <div class="text"> 
-        <p>
-          Nuestro proyecto es un juego donde en cada planeta se deben completar misiones. 
-          Cada planeta otorga características únicas de sus estados físicos y químicos y cómo se pueden generar hábitats en ellos.
-        </p>
-      </div>
-    </div>
+    <p>
+      Nuestro proyecto es un juego donde en cada planeta se deben completar misiones. 
+      Cada planeta otorga características únicas de sus estados físicos y químicos y cómo se pueden generar hábitats en ellos.
+    </p>
   </section>
 
   <section>
     <h2>Más sobre nosotros</h2>
-    <div class="content">
-      <div class="image">
-        <img src="manual_logo.jpg" alt="Logo hecho a mano">
-      </div>
-      <div class="text">
-        <p>
-          Somos un equipo de 6 estudiantes de grado 8 del colegio <b>Liceo Lunita de Chía</b>, en Cundinamarca. 
-          Nos emocionamos al enterarnos de la oportunidad de participar en el <b>NASA Space Apps Challenge</b> y desde el 5 de septiembre iniciamos esta aventura.
-        </p>
-      </div>
-    </div>
+    <p>
+      Somos un equipo de 6 estudiantes de grado 8 del colegio <b>Liceo Lunita de Chía</b>, en Cundinamarca. 
+      Nos emocionamos al enterarnos de la oportunidad de participar en el <b>NASA Space Apps Challenge</b> y desde el 5 de septiembre iniciamos esta aventura.
+    </p>
   </section>
 
   <footer>
     <p>© 2025 Satro Minds - NASA Space Apps Challenge Neiva</p>
-    <p>Escanea el QR para conocer más:</p>
-    <img src="qr.png" alt="QR del reto">
+    <p>✨ Gracias por visitar nuestra página 🚀</p>
   </footer>
 
 </body>
